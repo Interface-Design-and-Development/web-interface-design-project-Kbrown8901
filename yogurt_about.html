@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags for character encoding and responsive design -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Page Title -->
+  <title>About Us | Swirly's Yo-Go</title>
+  <!-- Google Fonts: Fredoka  -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- External stylesheet for custom yogurt webiste stles  -->
+  <link rel="stylesheet" href="yogurt_styles.css" />
+</head>
+
+<body>
+  <!-- Header with site title, tagline, intro, and navigation links -->
+  <header>
+    <h1>Swirly's Yo-Go</h1>
+    <!-- Site navigation menu -->
+    <nav>
+      <a href="yogurt_index.html">Home</a>
+      <a href="yogurt_about.html">Our Story</a>
+      <a href="yogurt_flavors.html">Flavors</a>
+      <!-- Button that triggers a surprise flavor -->
+      <button id="surpriseBtn">Surprise Me</button>
+      <!-- Call to action button -->
+      <!-- <a href="#create" class="cta-button">Create Your Own Swirly</a> -->
+    </nav>
+  </header>
+<!-- Main conteent of the About page -->
+  <main>
+    <!-- Section about the brand's origin story -->
+    <section class="highlight-box">
+      <h2>Why Yogurt?</h2>
+      <p>
+        It all started with a tiny fridge, two jars of milk, and one wild idea during a finals week meltdown. Swirly's was born from late-night cravings and a desire to make something fresh, flavorful, and fun. We believe yogurt should be bold, inspiring, and never boring.
+      </p>
+    </section>
+<!-- Section for simple interactive Flavor Quiz -->
+    <section class="highlight-box">
+      <h2>Flavor Quiz</h2>
+      <p>Not sure which flavor suits you? Take our one-question quiz!</p>
+      <!-- Dropdown menu for user to select their mood -->
+      <label for="mood">Pick your vibe today:</label>
+      <select id="mood">
+        <option value="">-- Choose --</option>
+        <option value="chill">Chill</option>
+        <option value="adventurous">Adventurous</option>
+        <option value="tired">Tired</option>
+      </select>
+      <!-- Button to trigger flavor suggestion -->
+      <button onclick="suggestFlavor()">Find My Flavor</button>
+      <!-- Paragraph to display the quiz result -->
+      <p id="quizResult"></p>
+    </section>
+  </main>
+<!-- Footer Section -->
+  <footer>
+    <p>© 2025 Swirly's</p>
+  </footer>
+<!-- External javascript file for site-wide interactivity -->
+  <script src="yogurt_script.js"></script>
+  <!-- Inline javascript to handle flavor quiz logix -->
+  <script>
+    function suggestFlavor() {
+      // Get selected mood from dropdown
+      const mood = document.getElementById('mood').value;
+      const result = document.getElementById('quizResult');
+      // If no mood is selected, prompt user
+      if (!mood) {
+        result.textContent = "Please pick a mood to get a flavor!";
+        return;
+      }
+      // Suggest a flavor based on the selected mood
+      let flavor;
+      switch (mood) {
+        case 'chill':
+          flavor = "Blueberry Breeze 🍇";
+          break;
+        case 'adventurous':
+          flavor = "Spicy Mango Tango 🌶️🥭";
+          break;
+        case 'tired':
+          flavor = "Finals Fuel (Espresso Yogurt) ☕";
+          break;
+      }
+      // Display the suggested flavor 
+      result.textContent = `You should try: ${flavor}`;
+    }
+  </script>
+</body>
+</html>

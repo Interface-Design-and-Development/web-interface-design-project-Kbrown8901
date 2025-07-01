@@ -1,0 +1,126 @@
+<!-- Begin Swirly's Website Header Section -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Swirly's Yo-Go</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="yogurt_styles.css" />
+</head>
+<body>
+  <!-- Site Header with Branding and Navigation -->
+<header class="swirlys-header">
+  <h1>Swirly's Yo-Go</h1>
+  <h2 class="tagline">Organic, Fresh, Creamy, and Flavorful</h2>
+  <p class="intro">Discover your new favorite yogurt flavor here at Swirly's</p>
+
+ <nav>
+  <a href="yogurt_index.html">Home</a>
+  <a href="yogurt_about.html">Our Story</a>
+  <a href="yogurt_flavors.html">Our Flavors</a> 
+  <button id="surpriseBtn">Surprise Me</button>
+ <!-- <a href="#create" class="cta-button">Create Your Own Swirly</a> -->
+</nav>
+</header>
+<!-- End of Header Section -->
+<!--
+  <main>
+    <section>
+     <section class="highlight-box">
+  <h2>Organic, Fresh, Creamy, and Flavorful</h2>
+  <p>Discover your new favorite yogurt flavor here at Swirly's!.</p>
+</section>
+-->
+<!--
+<section id="flavors"> 
+  <div class="highlight-box">
+    
+    <h3>Our Top Flavors</h3>
+    <ul>
+      <li>Strawberry Stardust</li>
+      <li>Moonlight Mango</li>
+      <li>Finals Fuel (Espresso)</li>
+    </ul>
+    -->
+    <!--
+    <img src="Kids_eating_froyo.jpg" alt="Children enjoying frozen yogurt together" class="flavors-image" />
+
+    <h4>Swirly's Yogurt of the Day:</h4>
+    <p id="dailyFlavor"></p>
+  </div>
+</section>
+-->
+<!-- Highlighted row containing two boxes: Yogurt of the Day and Create Your Own Swirly -->
+   <section class="highlight-row">
+    <!-- Left box: Yogurt of the Day with an image -->
+  <div class="highlight-box">
+  <img src="other_frozen_yogurt.jpg" alt="Cups of frozen yogurt." class="flavors-image" />
+  <h4>Swirly's Yogurt of the Day:</h4>
+  <p id="dailyFlavor">Strawberry Stardust</p>
+</div>
+<!--Surprise Me Box (hidden initially)-->
+<div class="highlight-box" id="SurpriseMeHighLight">
+  <h4>Surprise Me Flavor:</h4>
+  <p id="SurpriseMeFlavorText">?</p>
+</div>
+<!-- Right box: Create Your Own Swirly form with flavor checkboxes -->
+  <div class="highlight-box">
+    <h3>Create Your Own Swirly</h3>
+    <p>Select up to three flavors:</p>
+    <!-- Flavor selection form -->
+    <form id="customSwirlyForm">
+     <label><input type="checkbox" name="flavor" value="Birthday Blitz"> Birthday Blitz</label><br>
+     <label><input type="checkbox" name="flavor" value="Cookie Galaxy"> Cookie Galaxy</label><br>
+     <label><input type="checkbox" name="flavor" value="Finals Fuel"> Finals Fuel</label><br>
+     <label><input type="checkbox" name="flavor" value="Lychee Dream"> Lychee Dream</label><br>
+     <label><input type="checkbox" name="flavor" value="Moonlight Mango"> Moonlight Mango</label><br>
+     <label><input type="checkbox" name="flavor" value="Strawberry Stardust"> Strawberry Stardust</label><br>
+     <!-- Submit button for custom flavor combo -->
+      <button type="submit">Create My Swirly</button>
+    </form>
+    <!-- Display area for the custom Swirly result -->
+    <p id="customResult"></p>
+  </div>
+</section>
+
+<!-- Order Online Call-to-Action Section -->
+    <section>
+  <a href="#" class="cta-button order-left">Order Online Now</a>
+</section>
+<!-- Surpise Me suggestion popup box -->
+<section>
+  <p id="surpriseFlavor" class="highlight-box"></p>
+</section>
+</main>
+<!-- Footer Section -->
+  <footer>
+    <p>© 2025 Swirly's</p>
+  </footer>
+<!-- Link to External JavaScript File -->
+  <script src="yogurt_script.js"></script>
+  <script>
+    // Daily yogurt logic
+    // Array of flavors for each day of the week (Sunday = 0, Monday = 1, etc.)
+    const days = ["Strawberry Stardust", "Moonlight Mango", "Finals Fuel", "Cookie Galaxy", "Birthday Blitz", "Lychee Dream", "Blueberry Breeze"];
+    const today = new Date().getDay(); // Get Current day (0-6)
+    document.getElementById("dailyFlavor").textContent = days[today]; //Display Flavor of the Day
+
+    // Custom Swirly form logic
+    // Handle form submission to build a custom flavor combo
+    document.getElementById("customSwirlyForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // Prevent page reload on submit
+      // Collect all checked flavor checkboxes
+      const selected = [...document.querySelectorAll("input[name='flavor']:checked")].map(cb => cb.value);
+      // Validate selection: must be 1-3 flavors
+      if (selected.length === 0 || selected.length > 3) {
+        document.getElementById("customResult").textContent = "Please select up to three flavors.";
+      } else {
+        document.getElementById("customResult").textContent = `Your Swirly: ${selected.join(", ")}`;
+      }
+    });
+  </script>
+</body>
+</html>

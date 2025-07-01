@@ -1,0 +1,208 @@
+/* Base styles */
+/* Base styles */
+body {
+  font-family: Raleway, sans-serif; /* Use Raleway font with fallback to sans-serif */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+
+  /* Old background pattern */
+  /* background: url("polka_dot_background.png") repeat; */
+
+  /* New background image (try this one) */
+  background: url("polka_dot_background.png") no-repeat center center fixed;
+
+  background-size: cover; /* Ensure background covers the full screen */
+  color: #333; /* Default text color: Dark grey */
+}
+
+/* Header Styling */
+header {
+  background: #D4E7C5; /* Sage Green background */
+  padding: 1em;        /* Space inside the header */
+  text-align: center;  /* Center all header content */
+}
+/* Make Swirly's title and tagline white */
+/*.swirlys-header h1,
+.swirlys-header h2 {
+  color: white;
+}
+*/
+/* Navigation Bar Styling */
+nav {
+  margin-top: 0.5em; /* Add space above the navigation links */
+}
+/* Navigation Links and Buttons Styling */
+nav a,
+nav button {
+  margin: 0 0.5em; /* Horizontal spacing between nav items */
+  text-decoration: none; /* Remove underline from linkks */
+  color: #7E1B28; /* Swirly's brand redish pink color for text */
+  font-weight: bold; /* Make the text bold */ 
+  background: none; /* No background colors for buttons */
+  border: none; /* No borders for buttons */ 
+  cursor: pointer; /* Pointer cursor on hover*/
+  font-size: 1rem; /* Standard Text Size */
+}
+/* Add underline to buttons and links in the nav bar when hovered*/
+nav button:hover,
+nav a:hover {
+  text-decoration: underline;
+}
+/* Set a consistent color for all main heading levels (h1 thorugh h4 )*/
+h1, h2, h3, h4 {
+  color: #5c2c2c; /* Rich brown for headings */
+}
+/* Add padding around the main content area */
+main {
+  padding: 1em 2em; /* 1em top/bottom and 2em left/right */
+}
+/* Adds spacing between sections to separate content visually*/
+section {
+  margin-bottom: 3em; /* Adds space below each sectionn*/
+}
+/* Stlye unordered lists with disc bullets*/
+ul {
+  list-style-type: none; /* No bullet point style */ 
+  padding-left: 1.5em; /* Indent the list from left to avoid a powerpoint look */
+}
+
+/* Call-to-action buttons */
+.cta-button {
+  display: inline-block; /* Allows padding and margin like a block element but flows inline */
+  background: #7E1B28; /* Bright redish pink background */
+  color: white; /* White text color */
+  padding: 0.5em 1em; /* Vertical and horizontal padding */ 
+  border-radius: 8px; /* Rounded Corners */
+  text-decoration: none; /* Remove underline on links*/
+  font-weight: bold; /* Make the text bold */
+  margin-top: 1em; /* Add spacing aove the button */
+}
+/* Hover effect for CTA buttons */
+.cta-button:hover {
+  background: #6D1723; /* Darker shade for hover effect */
+}
+
+/* Form styling */
+form {
+  margin-top: 1em; /* Space above the form */
+}
+/* Stlye for each label inside the form */
+form label {
+  display: block; /* Force each label to be on its own line */
+  margin-bottom: 0.5em; /* Space below each label */
+}
+/*
+.highlight-box {
+  background: #E1F0DA; /* Soft green */
+  /*padding: 1.5rem; /* Inner spacing */
+  /*border-radius: 10px; /* Rounded corners */
+  /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  /*margin-bottom: 2rem; /* Space below the box */
+/*}
+*/
+/* Styles for individual highlight boxes */
+.highlight-box {
+  background: rgba(255, 242, 224, 0.9); /* peachy cream with slight transparency */
+  padding: 2em; /* Space inside the box */
+  border-radius: 16px; /* Rounded corners for a soft look */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  max-width: 700px; /* Limit box width for readability */
+  margin: 2em auto; /* Center box horizontally with vertical spacing */
+  text-align: center; /* Center- align text inside the box */
+}
+#SurpriseMeHighLight {
+  display: none; /*Hide only this box by default*/
+}
+#SurpriseMeHighLight.active {
+  display: block;
+}
+/* Container for multiple highlight boxes arranged in a row */
+.highlight-row {
+  display: flex; /* Arranges the highlight box with photo */
+  flex-wrap: wrap; /* Allows items to wrap the next line on small screens */
+  gap: 2rem; /* Space between boxes */
+  justify-content: center; /* Center boxes horizontally */
+  padding: 1rem 0;/* Vertical padding above and below the row */
+}
+/* Adjust styling for highlight boxes within a row layout */
+.highlight-row .highlight-box {
+  flex: 1 1 300px; /* Flex-grow, flex-shrink, and  minimum width  300px */
+  max-width: 500px; /* Prevent boxes from getting too wide */
+}
+/* Style for the yogurt image in the highlight box */
+.flavors-image {
+  width: 100%;  /* Make image responsive by filling container width */
+  max-width: 400px; /* Limit max width to prevent it from being too large */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Ensure it's treated as a block-level element */ 
+  margin: 1rem auto; /* Center image horizontally with vertical spacing  */
+  border-radius: 8px; /* Soften edges with slight rounding */
+}
+/* Style for the full flavor list */
+.flavor-list {
+  columns: 2;                       /* Split into two vertical columns */
+  column-gap: 3rem;                 /* Add space betwee columns */
+  list-style-type: none;           /* Remove default bullet points  */
+  padding-left: 2rem;              /* Indent the list from the left  */
+  font-size: 1.2rem;               /* Slightly larger font for better readability */
+  line-height: 1.8;                /* Add vertical spacing between list items */
+  margin-top: 1rem;                /* Spacing above the list */
+  font-family: 'Fredoka', sans-serif;  /* Fun, accessible font */
+}
+/* Responsive adjustment: switch to one column on small screens */
+@media (max-width: 600px) {
+  .flavor-list {
+    columns: 1; /* Stack list in one column for small screens */
+  }
+}
+/* Style for the "Create My Swirly" form button */
+form button {
+  background: #7E1B28; /* Bright redish pink background */
+  color: white; /* White text */
+  border: none; /* Remove default border */
+  padding: 0.5em 1em; /*Add space inside the button */
+  margin-top: 1em; /* Space above the button */
+  border-radius: 5px; /* Rounded corners for a soft look*/
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+/* Hover effect for the form submission button */
+form button:hover {
+  background: #6D1723; /* Darker redish pink when hovered for feedback */
+}
+/* Style for displaying the quiz result */
+/* Flavor result */
+#customResult,
+#quizResult {
+  font-weight: bold; /* Make result text stand out */
+  margin-top: 1em; /* Add spacing above the result */
+}
+#surpriseFlavor {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #d94e60;
+  text-align: center;
+  margin-top: 1rem;
+}
+/* Footer Styling */
+footer {
+  background: #D4E7C5; /* Soft sage green backgrounf for the footer */
+  text-align: center; /* Center the footer contentb*/
+  padding: 1em; /* Space inside the footer */
+  margin-top: 2em; /* Space above the footer to seperate from content */
+}
+/* Responsive layout adjustments for tablets and smaller screens */
+@media (max-width: 768px) {
+  nav {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack navigation bar items vertically */
+    align-items: center; /* Center items horizontally */
+  }
+  .cta-button {
+    display: block; /* Make CTA button take up full width */ 
+    margin: 1em auto; /* Center the button with vertical spacing */
+  }
+  ul {
+    padding-left: 1em; /* Slightly reduce list indentation on small screens */
+  }
+}
+
